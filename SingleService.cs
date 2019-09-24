@@ -5,11 +5,11 @@ namespace ConsoleApp1
 {
     public class SingleService
     {
-        public SingleService()
+        public static int ServiceFirst { get; set; }
+        
+        public SingleService(TrancientService service)
         {
             ServiceFirst++;
-            Container.Resolve<TrancientService>();
         }
-        public static int ServiceFirst { get; set; }
     }
 }

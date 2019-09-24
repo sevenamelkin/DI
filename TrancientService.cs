@@ -1,19 +1,16 @@
 using Autofac;
 using static ConsoleApp1.Program;
+using static ConsoleApp1.ScopeService;
 
 namespace ConsoleApp1
 {
     public class TrancientService
     {
-        public int SecondValue { get; set; }
-
-        public TrancientService()
+        public static int ServiceThree { get; set; }
+        
+        public TrancientService(ScopeService scopeService)
         {
             ServiceThree++;
-            Container.Resolve<ScopeService>();
-            SecondValue = ServiceThree;
         }
-
-        public static int ServiceThree { get; set; }
     }
 }

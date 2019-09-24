@@ -1,5 +1,6 @@
 using System.Security.Cryptography.X509Certificates;
 using static ConsoleApp1.Program;
+using static ConsoleApp1.ScopeService;
 using Autofac;
 
 namespace ConsoleApp1
@@ -7,14 +8,10 @@ namespace ConsoleApp1
     public class Service4
     {
         public static int ServiceFour { get; set; }
-        public int FirstValue { get; set; }
 
-        public Service4()
+        public Service4(ScopeService scopeService, SingleService singleService)
         {
             ServiceFour++;
-             Container.Resolve<ScopeService>();
-             Container.Resolve<SingleService>();
-             FirstValue = ServiceFour;
         }
     }
 }
