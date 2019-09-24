@@ -7,9 +7,9 @@ namespace ConsoleApp1
     {
         public SingleService()
         {
-            var trancientService = Container.Resolve<TrancientService>();
-            trancientService.ServiceThree++;
+            ServiceFirst++;
+            Container.Resolve<TrancientService>();
         }
-        public int ServiceFirst { get; set; }
+        public static int ServiceFirst { get; set; }
     }
 }

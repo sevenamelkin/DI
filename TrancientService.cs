@@ -5,15 +5,15 @@ namespace ConsoleApp1
 {
     public class TrancientService
     {
-        public int SecondScopeValue { get; set; }
+        public int SecondValue { get; set; }
 
         public TrancientService()
         {
-            var scopeService = Container.Resolve<ScopeService>();
-            scopeService.ServiceSecond++;
-            SecondScopeValue = scopeService.ServiceSecond;
+            ServiceThree++;
+            Container.Resolve<ScopeService>();
+            SecondValue = ServiceThree;
         }
 
-        public int ServiceThree { get; set; }
+        public static int ServiceThree { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using Autofac;
+using static ConsoleApp1.Service4;
 
 namespace ConsoleApp1
 {
@@ -18,9 +19,9 @@ namespace ConsoleApp1
             var service3 = Container.Resolve<ScopeService>();
 
             var service4 = Container.Resolve<Service4>();
-
-            Console.WriteLine($"First Scope Value = {service4.FirstScopeValue.ToString()}");
-            Console.WriteLine($"Second Scope Value = {service2.SecondScopeValue.ToString()}");
+            
+            Console.WriteLine($"First value = {service4.FirstValue.ToString()}");
+            Console.WriteLine($"Second value = {service2.SecondValue.ToString()}");
         }
 
         private static void RegisterService()
